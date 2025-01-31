@@ -43,7 +43,7 @@
 
 5. _____ Window
 6. Watch _____
-*/
+
 
 // IF STATEMENTS //
 
@@ -92,12 +92,12 @@ else{
 // Declare code once, use it whatever you want after that
 // Call the function to exacute code
 
-/*
+
 function functionname(parameters, parameters){
     // function code goes here
 }
 
-*/
+
 
 function happyBirthday(username, bage){
     console.log("Happy Birthday to you");
@@ -110,3 +110,87 @@ function happyBirthday(username, bage){
 happyBirthday("Evan", age)
 happyBirthday("Mr. Gardner", 38)
 happyBirthday("Marcus Prado", 56);
+
+
+function add(x,y){
+    let result = x + y
+    return result
+}
+
+let subtactAnswer = subtract(8,5);
+console.log(subtractAnswer)
+
+
+
+function isEven(number){
+    if (number % 2 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+function isEven(number){
+    return number % 2 === 0 ? true : false; //Ternary Operator
+}
+
+let username = "";
+
+if(username === ""){
+    console.log(`You didn't enter your name.`)
+}
+else{
+    console.log(`Hello ${username}`)
+}
+
+let myUsername = "";
+
+while(myUsername === ""){
+    console.log(`Name not found`)
+    myUsername = window.prompt('Enter your name');
+}
+
+console.log("While loop finished.");
+console.log(`Hello ${myUsername}`);
+
+let myName;
+
+do{
+    myName = window.prompt('Enter your name');
+}while(myName === "" || myName === null);
+
+
+
+let loggedIn = false;
+let myNewUserName;
+let myPassword
+
+while(!loggedIn){
+    myNewUserName = window.prompt("Enter you Username");
+    myPassword = window.prompt("Enter you Password");
+    if(myNewUserName === "username" && myPassword === "password"){
+        loggedIn = true;
+        console.log("Log in success")
+    }
+    else{
+        console.log("Invalid credentials. Try again")
+    }
+}
+
+*/
+
+// FOR LOOPS //
+// Repeat some code a LIMITED amount of times.
+for(let i = 2; i <= 20; i+=2){
+    console.log("Hello");
+    console.log(i)
+}
+for(let i = 1; i <= 20; i++){
+    if(i == 13){
+        break; //continue;
+    }
+    console.log(i)
+}

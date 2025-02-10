@@ -180,7 +180,7 @@ while(!loggedIn){
     }
 }
 
-*/
+
 
 // FOR LOOPS //
 // Repeat some code a LIMITED amount of times.
@@ -193,4 +193,107 @@ for(let i = 1; i <= 20; i++){
         break; //continue;
     }
     console.log(i)
+}
+
+*/
+
+let fruits = ["apple", "banana", "orange"]
+console.log(fruits[0])
+fruits[3] = "coconut"
+console.log(fruits[3])
+
+fruits.push("coconut")
+fruits.pop()
+fruits.unshift("mango")
+fruits.shift()
+
+let numoffruits = fruits.length
+console.log(numoffruits)
+console.log(fruits.length)
+
+let index = fruits.indexOf("starfruit")
+console.log(index)
+
+for(let i = 0; i < fruits.length; i++){
+    console.log(fruits[i])
+}
+
+for(let i = fruits.length -1; i >= 0; i--){
+    console.log(fruits[i])
+}
+
+for(let fruit of fruits){
+    console.log(fruit)
+}
+
+//Sort method
+fruits.sort()
+console.log(fruits)
+//Reverse sort
+fruits.reverse()
+console.log(fruits)
+
+const matrix = [[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]];
+console.log(matrix)
+
+for(let row of matrix){
+    const rowString = row.join(' ') // .join adds something between each row element or array element
+    console.log(rowString)
+}
+
+//matrix [row][column]
+matrix[0][0] = 'X'
+matrix[0][1] = 'O'
+matrix[0][2] = 'O'
+matrix[1][0] = 'X'
+matrix[1][1] = 'O'
+matrix[1][2] = 'X'
+matrix[2][0] = 'O'
+matrix[2][1] = 'X'
+matrix[2][2] = 'O'
+
+for(let row of matrix){
+    const rowString = row.join(' ') // .join adds something between each row element or array element
+    console.log(rowString)
+}
+
+
+const numpad = [[1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+                ["*", 0, "#"]];
+console.log(numpad)
+
+// Object = like python dictionary
+// NOT the same as "Objects" from object oriented programming
+
+let person = {
+    // Name/Value pairs
+    firstName: "John",
+    lastName: "Smith",
+    age: 46,
+    email: "johnsmith@email.com"
+}
+
+console.log(person)
+// dot notation
+console.log(person.lastName)
+
+// Bracket Notation
+
+// console.log(person[age]) <-- Will NOT work
+console.log(person["age"]) // Assuming a variable
+console.log(person["age"] + 10)
+
+// Looping through Objects
+for (i in person){
+    // console.log[i] <-- Will not work
+    //console.log(person.i) <-- Will not work
+    console.log(person[i]) // <-- THIS WORKS!!!
+}
+
+for(i in person){
+    console.log(i + ": " + person[i])
 }

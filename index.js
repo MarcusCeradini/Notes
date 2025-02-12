@@ -298,7 +298,7 @@ for(i in person){
     console.log(i + ": " + person[i])
 }
 
-*/
+
 
 // MATH Object = a built-in object that provides a collection of properties & methods
 
@@ -385,3 +385,99 @@ console.log(foods)
 // combines fruitsAgain + vegetables
 foods = [...fruitsAgain, ...vegetables, "eggs", "milk"]
 console.log(foods);
+
+*/
+
+let x = true
+let y = false
+let z = true
+
+// Simple boolean check
+
+if(y){
+    console.log("this is true")
+}else{
+    console.log("this is false")
+}
+
+// The AND && operator
+if (x && y){
+    console.log("x and y are true")
+}else{
+    console.log("x and y together are not true")
+}
+
+// The OR || operator
+
+if(x || y){
+    console.log("x or y is true")
+}else{
+    console.log("Neither x nor y are true")
+}
+
+// The NOT ! operator
+if(!x){
+    console.log("x is not true")
+}else{
+    console.log("x is true")
+}
+
+const temp = 35
+
+if(temp > 0){
+    console.log("The weather is above 0")
+}else if(temp == 32){
+    console.log("The temp has just hit freezing")
+}else{
+    console.log("The temp is below 0")
+}
+
+// Check range of numbers with logical operators
+
+if(temp > 70 && temp < 80){
+    console.log("The temp is ideal")
+}else{
+    console.log("The temp is not ideal")
+}
+
+// Check range with OR operator
+
+if (temp > 90 || temp < 60){
+    console.log("The temp is extreme (either hot or cold)")
+}else{
+    console.log("The temp is within an acceptable range")
+}
+
+//if operator number range check
+
+if(!(temp > 100 || temp < 50)){
+    console.log("Temp is acceptable")
+}else{
+    console.log("Temp is extreme (either too hot or too cold)")
+}
+
+// Equality & Strict Equality
+/*
+   = assignment operator
+   == comparison operator (check if values are equal)\
+   === strict equality operator (compares if values AND the datatype are equal)
+   != inequality operator
+   !== STRICT inequality operator
+*/
+
+const PI = 3.14
+console.log(typeof PI)
+
+if(PI == "3.14"){
+    console.log("That is Pi")
+}else{
+    console.log("That is NOT PI")
+}
+
+// The string of 3.14 is == the number 3.14 in JavaScript
+
+if(PI === "3.14"){
+    console.log("That is Pi")
+}else{
+    console.log("That is NOT PI")
+}

@@ -481,3 +481,18 @@ if(PI === "3.14"){
 }else{
     console.log("That is NOT PI")
 }
+
+
+// If the 2 are not equal this should evaluate to true and trigger the if statement, but in this one it didn't since they were different types
+if(PI != "3.14"){
+    console.log("That is NOT Pi")
+}else{
+    console.log("That is PI")
+}
+
+// Here the two are STRICTLY NOT equal, evaluating the if statement
+if(PI !== "3.14"){
+    console.log("That is NOT Pi")
+}else{
+    console.log("That is PI")
+}

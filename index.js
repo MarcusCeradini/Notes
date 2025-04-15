@@ -386,7 +386,7 @@ console.log(foods)
 foods = [...fruitsAgain, ...vegetables, "eggs", "milk"]
 console.log(foods);
 
-*/
+
 
 let x = true
 let y = false
@@ -463,7 +463,7 @@ if(!(temp > 100 || temp < 50)){
    === strict equality operator (compares if values AND the datatype are equal)
    != inequality operator
    !== STRICT inequality operator
-*/
+
 
 const PI = 3.14
 console.log(typeof PI)
@@ -496,3 +496,10 @@ if(PI !== "3.14"){
 }else{
     console.log("That is PI")
 }
+
+*/
+
+function changeText() {
+    this.innerHTML = "Clicked"
+}
+document.getElementById("myButton").addEventListener("click", changeText);

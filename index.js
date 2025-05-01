@@ -503,3 +503,93 @@ function changeText() {
     this.innerHTML = "Clicked"
 }
 document.getElementById("myButton").addEventListener("click", changeText);
+
+
+// Create task display area
+let taskContainer = document.createElement("div")
+taskContainer.id = "taskmanager"
+document.body.appendChild(taskContainer)
+
+// Submit handler
+form.addEventListener("submit", function (i) {
+    i.preventDefault()
+
+    let text = document.getElementById("textinput").value.trim() // moved inside to get latest input
+
+    if (text === "") {
+        alert("Task name cannot be empty.")
+        return;
+    }
+
+    const task = {
+        id: ++number,
+        name: text,
+        priority: dropdown.value,
+        isImportant: checkbox.checked,
+        isCompleted: false,
+        date: new Date().toLocaleString()
+    };
+
+    tasks.push(task)
+    logTasks()
+    renderTasks()
+    form.reset()
+});
+
+// Render tasks
+function renderTasks() {
+    taskContainer.innerHTML = ""
+
+    tasks.forEach(task => {
+        let rimportant = document.createElement("div")
+        rimportant.className = "task"
+
+        if (task.isImportant) {
+            rimportant.style.borderLeft = "5px solid red"
+            rimportant.style.backgroundColor = "#ffe5e5"
+        }
+        if (rimportant.isCompleted) {
+            rimportant.style.textDecoration = "line-through"
+            rimportant.style.opacity = 0.6
+        }
+
+        rimportant.innerHTML = `
+            <strong>${task.name}</strong>
+            <em> (${task.priority})</em><br>
+            <small>Added: ${task.date}</small><br>
+            <button class="delete-btn" data-id="${task.id}">Delete</button>
+        `
+
+        rimportant.addEventListener("click", (e) => {
+            if (e.target.classList.contains("delete-btn")) {
+                deleteTask(task.id)
+            } else {
+                toggleCompletion(task.id)
+            }
+        })
+
+        taskContainer.appendChild(rimportant)
+    })
+}
+
+// Toggle completion
+function toggleCompletion(id) {
+    let task = tasks.find(t => t.id === id)
+    if (task) {
+        task.isCompleted = !task.isCompleted
+        logTasks()
+        renderTasks()
+    }
+}
+
+// Delete task
+function deleteTask(id) {
+    tasks = tasks.filter(t => t.id !== id)
+    logTasks()
+    renderTasks()
+}
+
+// Log tasks
+function logTasks() {
+    console.log(JSON.stringify(tasks, null, 2))
+}
